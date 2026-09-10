@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adithe Das | Portfolio</title>
+
+    <title>Adithe Das | Software Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
+        :root {
+            --pink: #ec4899;
+            --purple: #8b5cf6;
+            --dark-purple: #4c1d95;
+            --background: #10091c;
+            --surface: rgba(255, 255, 255, 0.08);
+            --border: rgba(255, 255, 255, 0.14);
+            --text: #f9f7ff;
+            --muted: #cec7dc;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,175 +34,423 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f6f8fc;
-            color: #263238;
-            line-height: 1.6;
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at top left, #35135e 0, transparent 35%),
+                radial-gradient(circle at bottom right, #541545 0, transparent 35%),
+                var(--background);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
         }
 
         nav {
-            background-color: #172554;
-            padding: 18px 8%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
+            padding: 18px 8%;
+            background: rgba(16, 9, 28, 0.78);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(18px);
         }
 
-        nav h2 {
-            color: white;
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--pink);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
         }
 
         nav a {
-            color: white;
             text-decoration: none;
-            margin-left: 20px;
+            font-weight: 600;
+            color: var(--muted);
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #93c5fd;
+            color: var(--pink);
         }
 
-        header {
-            min-height: 80vh;
-            background: linear-gradient(135deg, #172554, #2563eb);
-            color: white;
-            display: flex;
-            flex-direction: column;
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
+            gap: 70px;
+            max-width: 1150px;
+            margin: auto;
+            padding: 130px 25px 70px;
         }
 
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+        .eyebrow {
+            display: inline-block;
+            color: #f9a8d4;
+            background: rgba(236, 72, 153, 0.12);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            padding: 7px 14px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 22px;
         }
 
-        header h2 {
-            font-size: 1.5rem;
-            font-weight: normal;
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1.05;
             margin-bottom: 20px;
         }
 
-        header p {
+        .gradient-text {
+            background: linear-gradient(90deg, #f472b6, #c084fc);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            color: var(--muted);
             max-width: 650px;
             font-size: 1.1rem;
             margin-bottom: 30px;
         }
 
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
         .button {
-            display: inline-block;
-            background-color: white;
-            color: #1d4ed8;
-            padding: 12px 22px;
-            margin: 5px;
-            border-radius: 7px;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 13px 21px;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .button:hover {
-            background-color: #dbeafe;
+            transform: translateY(-4px);
+        }
+
+        .primary {
+            background: linear-gradient(90deg, var(--pink), var(--purple));
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+        }
+
+        .secondary {
+            border: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .photo-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-glow {
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            filter: blur(35px);
+            opacity: 0.45;
+            animation: pulse 4s infinite alternate;
+        }
+
+        .profile-photo {
+            position: relative;
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
         }
 
         section {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
-            padding: 70px 20px;
+            padding: 90px 25px;
         }
 
-        section h2 {
-            color: #172554;
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 30px;
+        .section-heading {
+            margin-bottom: 40px;
         }
 
-        .about-text {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
+        .section-heading p {
+            color: #f9a8d4;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+        }
+
+        .glass-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            backdrop-filter: blur(14px);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(236, 72, 153, 0.6);
+        }
+
+        .about-card {
+            padding: 35px;
+            color: var(--muted);
             font-size: 1.05rem;
         }
 
-        .cards {
+        .projects,
+        .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
         }
 
-        .card {
-            background-color: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        .project-card,
+        .service-card {
+            padding: 28px;
         }
 
-        .card h3 {
-            color: #1d4ed8;
-            margin-bottom: 12px;
+        .project-number {
+            color: #f9a8d4;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 2px;
         }
 
-        .card p {
-            margin-bottom: 15px;
+        .project-card h3,
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin: 12px 0;
         }
 
-        .card a {
-            color: #1d4ed8;
-            font-weight: bold;
+        .project-card p,
+        .service-card p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: rgba(139, 92, 246, 0.16);
+            color: #ddd0ff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+        }
+
+        .project-link {
+            color: #f9a8d4;
+            font-weight: 700;
             text-decoration: none;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            font-size: 1.3rem;
+            margin-bottom: 18px;
         }
 
         .skills {
-            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
         }
 
         .skill {
-            display: inline-block;
-            background-color: #dbeafe;
-            color: #172554;
-            padding: 10px 16px;
-            margin: 6px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .contact {
+            padding: 20px 10px;
             text-align: center;
         }
 
-        .contact a {
-            color: #1d4ed8;
+        .skill i {
+            display: block;
+            font-size: 2rem;
+            color: #f0abfc;
+            margin-bottom: 10px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 30px;
+        }
+
+        .contact-info,
+        form {
+            padding: 32px;
+        }
+
+        .contact-info p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
             text-decoration: none;
-            font-weight: bold;
-            margin: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--pink);
+            transform: translateY(-4px);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            margin-bottom: 14px;
+            padding: 14px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            background: rgba(255, 255, 255, 0.06);
+            color: white;
+            font: inherit;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #aaa2b8;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            color: white;
         }
 
         footer {
-            background-color: #172554;
-            color: white;
+            border-top: 1px solid var(--border);
             text-align: center;
-            padding: 25px;
+            color: var(--muted);
+            padding: 28px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.7s, transform 0.7s;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(0.95);
+            }
+
+            to {
+                transform: scale(1.08);
+            }
+        }
+
+        @media (max-width: 850px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .photo-container {
+                grid-row: 1;
+            }
+
+            .projects,
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 650px) {
             nav {
-                flex-direction: column;
+                justify-content: center;
             }
 
-            nav div {
-                margin-top: 10px;
+            nav ul {
+                display: none;
             }
 
-            nav a {
-                margin: 0 7px;
+            .profile-photo {
+                width: 240px;
+                height: 240px;
             }
 
-            header h1 {
-                font-size: 2.5rem;
+            .photo-glow {
+                width: 255px;
+                height: 255px;
             }
         }
     </style>
@@ -190,153 +458,367 @@
 
 <body>
 
-    <nav>
-        <h2>Adithe Das</h2>
+<nav>
+    <div class="logo">Adithe<span>.</span></div>
 
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="hero">
         <div>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+            <span class="eyebrow">Computer Science Student</span>
 
-    <header>
-        <h1>Hi, I'm Adithe Das</h1>
-        <h2>Computer Science Student and Aspiring Software Engineer</h2>
+            <h1>
+                Hi, I'm<br>
+                <span class="gradient-text">Adithe Das</span>
+            </h1>
 
-        <p>
-            I enjoy creating practical applications, learning new technologies,
-            and contributing to projects that solve real-world problems.
-        </p>
+            <p>
+                An aspiring software engineer who enjoys building useful
+                applications, learning new technologies, and contributing
+                to meaningful open-source projects.
+            </p>
 
-        <div>
-            <a class="button" href="#projects">View My Projects</a>
-            <a class="button" href="https://github.com/AditheD" target="_blank">GitHub</a>
-        </div>
-    </header>
+            <div class="buttons">
+                <a class="button primary" href="#projects">
+                    <i class="fa-solid fa-code"></i>
+                    View My Work
+                </a>
 
-    <section id="about">
-        <h2>About Me</h2>
-
-        <p class="about-text">
-            I am completing my bachelor's degree in Computer Science at
-            Farmingdale State College. I am interested in software development,
-            artificial intelligence, databases, Android development, and systems
-            programming. I also completed a Linux Foundation mentorship where I
-            contributed new APIs to the open-source Zowe Client Java SDK.
-        </p>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-
-        <div class="cards">
-            <div class="card">
-                <h3>CSC311 Capstone Project</h3>
-                <p>
-                    A team software-development project created for CSC311 using
-                    object-oriented programming and professional Git practices.
-                </p>
-                <a href="https://github.com/AditheD" target="_blank">
-                    View on GitHub
+                <a class="button secondary"
+                   href="https://github.com/AditheD"
+                   target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub
                 </a>
             </div>
+        </div>
 
-            <div class="card">
+        <div class="photo-container">
+            <div class="photo-glow"></div>
+
+            <img
+                class="profile-photo"
+                src="https://github.com/AditheD.png"
+                alt="Adithe Das">
+        </div>
+    </section>
+
+    <section id="about" class="reveal">
+        <div class="section-heading">
+            <p>GET TO KNOW ME</p>
+            <h2>About Me</h2>
+        </div>
+
+        <div class="glass-card about-card">
+            <p>
+                I am completing my bachelor's degree in Computer Science at
+                Farmingdale State College. My interests include software
+                development, artificial intelligence, Android development,
+                databases, and systems programming.
+            </p>
+
+            <br>
+
+            <p>
+                I completed a Linux Foundation mentorship with the Open
+                Mainframe Project, where I contributed new Java APIs to the
+                Zowe Client Java SDK. This experience helped me become more
+                confident working with professional development workflows,
+                testing, Git, and open-source collaboration.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <div class="section-heading">
+            <p>SELECTED WORK</p>
+            <h2>My Projects</h2>
+        </div>
+
+        <div class="projects">
+            <article class="glass-card project-card">
+                <span class="project-number">PROJECT 01</span>
+                <h3>CSC311 Capstone Project</h3>
+
+                <p>
+                    A team software-development project focused on
+                    object-oriented programming, collaboration, and
+                    professional Git practices.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">OOP</span>
+                    <span class="tag">Git</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/AditheD"
+                   target="_blank">
+                    View project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="glass-card project-card">
+                <span class="project-number">PROJECT 02</span>
                 <h3>Mirror72</h3>
+
                 <p>
                     An AI-powered application that forecasts a user's energy,
-                    mood, and focus over a 72-hour period using personal inputs.
+                    mood, and focus over a 72-hour period using real-time inputs.
                 </p>
-                <a href="https://github.com/AditheD" target="_blank">
-                    View on GitHub
-                </a>
-            </div>
 
-            <div class="card">
-                <h3>Zowe Client Java SDK</h3>
-                <p>
-                    Open-source contributions completed during my Linux Foundation
-                    mentorship, including new Java APIs for working with z/OSMF.
-                </p>
-                <a href="https://github.com/zowe/zowe-client-java-sdk"
+                <div class="tags">
+                    <span class="tag">Next.js</span>
+                    <span class="tag">React</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">AI</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/AditheD"
                    target="_blank">
-                    View on GitHub
+                    View project <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
-            </div>
+            </article>
+
+            <article class="glass-card project-card">
+                <span class="project-number">PROJECT 03</span>
+                <h3>Zowe Client Java SDK</h3>
+
+                <p>
+                    Open-source contributions completed during my Linux
+                    Foundation mentorship, including Java APIs and automated tests.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Maven</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">JUnit</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/zowe/zowe-client-java-sdk"
+                   target="_blank">
+                    View project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
         </div>
     </section>
 
-    <section id="services">
-        <h2>What I Can Do</h2>
+    <section id="services" class="reveal">
+        <div class="section-heading">
+            <p>WHAT I CAN DO</p>
+            <h2>Services</h2>
+        </div>
 
-        <div class="cards">
-            <div class="card">
+        <div class="services">
+            <article class="glass-card service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+
                 <h3>Software Development</h3>
                 <p>
-                    Create organized applications using Java, Python, C,
-                    Kotlin, and object-oriented programming.
+                    Building organized and maintainable programs using
+                    object-oriented programming principles.
                 </p>
-            </div>
+            </article>
 
-            <div class="card">
+            <article class="glass-card service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+
                 <h3>Web Development</h3>
                 <p>
-                    Build responsive websites and web applications using
-                    HTML, CSS, JavaScript, React, and Next.js.
+                    Creating responsive websites and web applications with
+                    modern frontend and backend technologies.
                 </p>
-            </div>
+            </article>
 
-            <div class="card">
+            <article class="glass-card service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+
                 <h3>Mobile Development</h3>
                 <p>
-                    Develop Android applications using Kotlin and
-                    Jetpack Compose.
+                    Developing user-friendly Android applications using
+                    Kotlin and Jetpack Compose.
                 </p>
-            </div>
-
-            <div class="card">
-                <h3>Open-Source Contributions</h3>
-                <p>
-                    Contribute code, tests, documentation, and improvements
-                    to collaborative software projects.
-                </p>
-            </div>
+            </article>
         </div>
     </section>
 
-    <section>
-        <h2>Skills</h2>
+    <section id="skills" class="reveal">
+        <div class="section-heading">
+            <p>MY TOOLKIT</p>
+            <h2>Skills</h2>
+        </div>
 
         <div class="skills">
-            <span class="skill">Java</span>
-            <span class="skill">Kotlin</span>
-            <span class="skill">Python</span>
-            <span class="skill">C</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">React</span>
-            <span class="skill">SQL</span>
-            <span class="skill">Git & GitHub</span>
-            <span class="skill">Android Development</span>
+            <div class="glass-card skill">
+                <i class="fa-brands fa-java"></i>
+                <span>Java</span>
+            </div>
+
+            <div class="glass-card skill">
+                <i class="fa-brands fa-python"></i>
+                <span>Python</span>
+            </div>
+
+            <div class="glass-card skill">
+                <i class="fa-brands fa-android"></i>
+                <span>Kotlin</span>
+            </div>
+
+            <div class="glass-card skill">
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="glass-card skill">
+                <i class="fa-brands fa-react"></i>
+                <span>React</span>
+            </div>
+
+            <div class="glass-card skill">
+                <i class="fa-solid fa-database"></i>
+                <span>SQL</span>
+            </div>
+
+            <div class="glass-card skill">
+                <i class="fa-brands fa-git-alt"></i>
+                <span>Git</span>
+            </div>
+
+            <div class="glass-card skill">
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML</span>
+            </div>
+
+            <div class="glass-card skill">
+                <i class="fa-brands fa-css3-alt"></i>
+                <span>CSS</span>
+            </div>
+
+            <div class="glass-card skill">
+                <i class="fa-solid fa-code"></i>
+                <span>C/C++</span>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2>Let's Connect</h2>
+    <section id="contact" class="reveal">
+        <div class="section-heading">
+            <p>LET'S CONNECT</p>
+            <h2>Contact Me</h2>
+        </div>
 
-        <p>I am always interested in learning, collaborating, and exploring new opportunities.</p>
+        <div class="contact-container">
+            <div class="glass-card contact-info">
+                <h3>Let's work together</h3>
 
-        <br>
+                <p>
+                    I am open to internships, entry-level opportunities,
+                    collaborations, and conversations about technology.
+                </p>
 
-        <a href="https://github.com/AditheD" target="_blank">GitHub</a>
+                <div class="social-links">
+                    <a href="https://github.com/AditheD"
+                       target="_blank"
+                       aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
 
-        <a href="https://www.linkedin.com/in/adithe-d/" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/adithe-d/"
+                       target="_blank"
+                       aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="mailto:adithedas20@gmail.com"
+                       aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <form class="glass-card" onsubmit="sendEmail(event)">
+                <input id="name"
+                       type="text"
+                       placeholder="Your name"
+                       required>
+
+                <input id="email"
+                       type="email"
+                       placeholder="Your email"
+                       required>
+
+                <textarea id="message"
+                          placeholder="Your message"
+                          required></textarea>
+
+                <button class="button primary" type="submit">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Send Message
+                </button>
+            </form>
+        </div>
     </section>
+</main>
 
-    <footer>
-        <p>&copy; 2026 Adithe Das. Built with HTML and CSS.</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 Adithe Das. Designed and built with care.</p>
+</footer>
+
+<script>
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        },
+        { threshold: 0.12 }
+    );
+
+    revealElements.forEach(element => observer.observe(element));
+
+    function sendEmail(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        const subject = encodeURIComponent("Portfolio message from " + name);
+        const body = encodeURIComponent(
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\n\nMessage:\n" + message
+        );
+
+        window.location.href =
+            "mailto:adithedas20@gmail.com?subject=" +
+            subject +
+            "&body=" +
+            body;
+    }
+</script>
 
 </body>
 </html>
