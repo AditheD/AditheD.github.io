@@ -2,22 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Adithe Das – Computer Science student and aspiring software engineer.">
 
     <title>Adithe Das | Software Developer</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
           rel="stylesheet">
 
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
         :root {
-            --pink: #ec4899;
-            --purple: #8b5cf6;
+            --pink: #f472b6;
+            --bright-pink: #ec4899;
+            --purple: #a855f7;
             --dark-purple: #4c1d95;
             --background: #10091c;
             --surface: rgba(255, 255, 255, 0.08);
@@ -36,8 +49,16 @@
         body {
             font-family: "Inter", sans-serif;
             background:
-                radial-gradient(circle at top left, #35135e 0, transparent 35%),
-                radial-gradient(circle at bottom right, #541545 0, transparent 35%),
+                radial-gradient(
+                    circle at top left,
+                    #35135e 0,
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    #541545 0,
+                    transparent 35%
+                ),
                 var(--background);
             color: var(--text);
             line-height: 1.7;
@@ -57,7 +78,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 18px 8%;
-            background: rgba(16, 9, 28, 0.78);
+            background: rgba(16, 9, 28, 0.8);
             border-bottom: 1px solid var(--border);
             backdrop-filter: blur(18px);
         }
@@ -68,7 +89,7 @@
         }
 
         .logo span {
-            color: var(--pink);
+            color: var(--bright-pink);
         }
 
         nav ul {
@@ -78,10 +99,10 @@
         }
 
         nav a {
+            color: var(--muted);
             text-decoration: none;
             font-weight: 600;
-            color: var(--muted);
-            transition: 0.3s;
+            transition: color 0.3s;
         }
 
         nav a:hover {
@@ -114,18 +135,20 @@
         .hero h1 {
             font-size: clamp(3rem, 7vw, 5.5rem);
             line-height: 1.05;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
-        .gradient-text {
-            background: linear-gradient(90deg, #f472b6, #c084fc);
-            -webkit-background-clip: text;
-            color: transparent;
+        .hero-title {
+            color: var(--pink);
+            font-weight: 800;
+            letter-spacing: -3px;
+            text-shadow:
+                0 8px 30px rgba(236, 72, 153, 0.3);
         }
 
         .hero p {
-            color: var(--muted);
             max-width: 650px;
+            color: var(--muted);
             font-size: 1.1rem;
             margin-bottom: 30px;
         }
@@ -139,12 +162,16 @@
         .button {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 9px;
             padding: 13px 21px;
             border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s,
+                border-color 0.3s;
         }
 
         .button:hover {
@@ -152,8 +179,14 @@
         }
 
         .primary {
-            background: linear-gradient(90deg, var(--pink), var(--purple));
-            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--bright-pink),
+                    var(--purple)
+                );
+            box-shadow:
+                0 10px 30px rgba(236, 72, 153, 0.25);
         }
 
         .secondary {
@@ -161,10 +194,15 @@
             background: var(--surface);
         }
 
+        .secondary:hover {
+            border-color: var(--pink);
+        }
+
         .photo-container {
             position: relative;
             display: flex;
             justify-content: center;
+            align-items: center;
         }
 
         .photo-glow {
@@ -172,7 +210,12 @@
             width: 330px;
             height: 330px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--pink), var(--purple));
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--bright-pink),
+                    var(--purple)
+                );
             filter: blur(35px);
             opacity: 0.45;
             animation: pulse 4s infinite alternate;
@@ -213,12 +256,17 @@
             border: 1px solid var(--border);
             border-radius: 18px;
             backdrop-filter: blur(14px);
-            transition: transform 0.3s, border-color 0.3s;
+            transition:
+                transform 0.3s,
+                border-color 0.3s,
+                box-shadow 0.3s;
         }
 
         .glass-card:hover {
             transform: translateY(-7px);
             border-color: rgba(236, 72, 153, 0.6);
+            box-shadow:
+                0 18px 45px rgba(0, 0, 0, 0.25);
         }
 
         .about-card {
@@ -279,13 +327,22 @@
             text-decoration: none;
         }
 
+        .project-link:hover {
+            color: white;
+        }
+
         .service-icon {
             width: 50px;
             height: 50px;
             display: grid;
             place-items: center;
             border-radius: 13px;
-            background: linear-gradient(135deg, var(--pink), var(--purple));
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--bright-pink),
+                    var(--purple)
+                );
             font-size: 1.3rem;
             margin-bottom: 18px;
         }
@@ -303,20 +360,19 @@
 
         .skill i {
             display: block;
-            font-size: 2rem;
             color: #f0abfc;
+            font-size: 2rem;
             margin-bottom: 10px;
         }
 
-        .contact-container {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 30px;
+        .contact-info {
+            max-width: 750px;
+            padding: 35px;
         }
 
-        .contact-info,
-        form {
-            padding: 32px;
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
         }
 
         .contact-info p {
@@ -326,64 +382,43 @@
 
         .social-links {
             display: flex;
-            gap: 12px;
+            flex-wrap: wrap;
+            gap: 13px;
         }
 
         .social-links a {
-            width: 45px;
-            height: 45px;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 12px 18px;
             background: rgba(255, 255, 255, 0.1);
-            transition: 0.3s;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition:
+                transform 0.3s,
+                background 0.3s;
         }
 
         .social-links a:hover {
-            background: var(--pink);
+            background: var(--bright-pink);
             transform: translateY(-4px);
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            margin-bottom: 14px;
-            padding: 14px;
-            border: 1px solid var(--border);
-            border-radius: 9px;
-            background: rgba(255, 255, 255, 0.06);
-            color: white;
-            font: inherit;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            color: #aaa2b8;
-        }
-
-        textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-
-        button {
-            border: none;
-            cursor: pointer;
-            color: white;
         }
 
         footer {
             border-top: 1px solid var(--border);
-            text-align: center;
             color: var(--muted);
+            text-align: center;
             padding: 28px;
         }
 
         .reveal {
             opacity: 0;
             transform: translateY(35px);
-            transition: opacity 0.7s, transform 0.7s;
+            transition:
+                opacity 0.7s,
+                transform 0.7s;
         }
 
         .reveal.visible {
@@ -405,6 +440,7 @@
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 50px;
             }
 
             .hero p {
@@ -428,10 +464,6 @@
             .skills {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 650px) {
@@ -443,6 +475,10 @@
                 display: none;
             }
 
+            .hero {
+                padding-top: 120px;
+            }
+
             .profile-photo {
                 width: 240px;
                 height: 240px;
@@ -452,373 +488,395 @@
                 width: 255px;
                 height: 255px;
             }
+
+            .hero-title {
+                letter-spacing: -2px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">Adithe<span>.</span></div>
+    <nav>
+        <div class="logo">
+            Adithe<span>.</span>
+        </div>
 
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<main>
-    <section class="hero">
-        <div>
-            <span class="eyebrow">Computer Science Student</span>
+    <main>
 
-            <h1>
-                Hi, I'm<br>
-                <span class="gradient-text">Adithe Das</span>
-            </h1>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div>
+                <span class="eyebrow">
+                    Computer Science Student
+                </span>
 
-            <p>
-                An aspiring software engineer who enjoys building useful
-                applications, learning new technologies, and contributing
-                to meaningful open-source projects.
-            </p>
+                <h1 class="hero-title">
+                    Hey there,<br>
+                    I'm Adithe Das
+                </h1>
 
-            <div class="buttons">
-                <a class="button primary" href="#projects">
+                <p>
+                    An aspiring software engineer who enjoys building useful
+                    applications, learning new technologies, and contributing
+                    to meaningful open-source projects.
+                </p>
+
+                <div class="buttons">
+                    <a class="button primary"
+                       href="#projects">
+                        <i class="fa-solid fa-code"></i>
+                        View My Work
+                    </a>
+
+                    <a class="button secondary"
+                       href="https://github.com/AditheD"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="photo-container">
+                <div class="photo-glow"></div>
+
+                <img class="profile-photo"
+                     src="https://github.com/AditheD.png"
+                     alt="Adithe Das">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about"
+                 class="reveal">
+
+            <div class="section-heading">
+                <p>GET TO KNOW ME</p>
+                <h2>About Me</h2>
+            </div>
+
+            <div class="glass-card about-card">
+                <p>
+                    I am completing my bachelor's degree in Computer Science
+                    at Farmingdale State College. My interests include
+                    software development, artificial intelligence, Android
+                    development, databases, and systems programming.
+                </p>
+
+                <br>
+
+                <p>
+                    I completed a Linux Foundation mentorship with the Open
+                    Mainframe Project, where I contributed new Java APIs to
+                    the Zowe Client Java SDK. This experience helped me become
+                    more confident working with professional development
+                    workflows, testing, Git, and open-source collaboration.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects"
+                 class="reveal">
+
+            <div class="section-heading">
+                <p>SELECTED WORK</p>
+                <h2>My Projects</h2>
+            </div>
+
+            <div class="projects">
+
+                <!-- Project 1 -->
+                <article class="glass-card project-card">
+                    <span class="project-number">
+                        PROJECT 01
+                    </span>
+
+                    <h3>CSC325 Group Project</h3>
+
+                    <p>
+                        A collaborative software project created for CSC325.
+                        This project demonstrates teamwork, programming,
+                        problem-solving, and GitHub collaboration.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Team Project</span>
+                        <span class="tag">Software Development</span>
+                        <span class="tag">GitHub</span>
+                    </div>
+
+                    <a class="project-link"
+                       href="https://github.com/duqujn/CSC325GroupProject"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View project
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="glass-card project-card">
+                    <span class="project-number">
+                        PROJECT 02
+                    </span>
+
+                    <h3>Garment Simulator</h3>
+
+                    <p>
+                        An interactive garment simulation application that
+                        demonstrates application development, software design,
+                        and programming skills.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Application Development</span>
+                        <span class="tag">Simulation</span>
+                        <span class="tag">Git</span>
+                    </div>
+
+                    <a class="project-link"
+                       href="https://github.com/AditheD/-Garment-simulator"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View project
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="glass-card project-card">
+                    <span class="project-number">
+                        PROJECT 03
+                    </span>
+
+                    <h3>Zowe Client Java SDK</h3>
+
+                    <p>
+                        Open-source contributions completed during my Linux
+                        Foundation mentorship, including new Java APIs and
+                        automated tests.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Maven</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">JUnit</span>
+                    </div>
+
+                    <a class="project-link"
+                       href="https://github.com/zowe/zowe-client-java-sdk"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View project
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services"
+                 class="reveal">
+
+            <div class="section-heading">
+                <p>WHAT I CAN DO</p>
+                <h2>Services</h2>
+            </div>
+
+            <div class="services">
+
+                <article class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                    <h3>Software Development</h3>
+
+                    <p>
+                        Building organized and maintainable programs using
+                        object-oriented programming principles.
+                    </p>
+                </article>
+
+                <article class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <h3>Web Development</h3>
+
+                    <p>
+                        Creating responsive websites and web applications
+                        with modern frontend and backend technologies.
+                    </p>
+                </article>
+
+                <article class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+
+                    <h3>Mobile Development</h3>
+
+                    <p>
+                        Developing user-friendly Android applications using
+                        Kotlin and Jetpack Compose.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills"
+                 class="reveal">
+
+            <div class="section-heading">
+                <p>MY TOOLKIT</p>
+                <h2>Skills</h2>
+            </div>
+
+            <div class="skills">
+
+                <div class="glass-card skill">
+                    <i class="fa-brands fa-java"></i>
+                    <span>Java</span>
+                </div>
+
+                <div class="glass-card skill">
+                    <i class="fa-brands fa-python"></i>
+                    <span>Python</span>
+                </div>
+
+                <div class="glass-card skill">
+                    <i class="fa-brands fa-android"></i>
+                    <span>Kotlin</span>
+                </div>
+
+                <div class="glass-card skill">
+                    <i class="fa-brands fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="glass-card skill">
+                    <i class="fa-brands fa-react"></i>
+                    <span>React</span>
+                </div>
+
+                <div class="glass-card skill">
+                    <i class="fa-solid fa-database"></i>
+                    <span>SQL</span>
+                </div>
+
+                <div class="glass-card skill">
+                    <i class="fa-brands fa-git-alt"></i>
+                    <span>Git</span>
+                </div>
+
+                <div class="glass-card skill">
+                    <i class="fa-brands fa-html5"></i>
+                    <span>HTML</span>
+                </div>
+
+                <div class="glass-card skill">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <span>CSS</span>
+                </div>
+
+                <div class="glass-card skill">
                     <i class="fa-solid fa-code"></i>
-                    View My Work
-                </a>
-
-                <a class="button secondary"
-                   href="https://github.com/AditheD"
-                   target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                    GitHub
-                </a>
-            </div>
-        </div>
-
-        <div class="photo-container">
-            <div class="photo-glow"></div>
-
-            <img
-                class="profile-photo"
-                src="https://github.com/AditheD.png"
-                alt="Adithe Das">
-        </div>
-    </section>
-
-    <section id="about" class="reveal">
-        <div class="section-heading">
-            <p>GET TO KNOW ME</p>
-            <h2>About Me</h2>
-        </div>
-
-        <div class="glass-card about-card">
-            <p>
-                I am completing my bachelor's degree in Computer Science at
-                Farmingdale State College. My interests include software
-                development, artificial intelligence, Android development,
-                databases, and systems programming.
-            </p>
-
-            <br>
-
-            <p>
-                I completed a Linux Foundation mentorship with the Open
-                Mainframe Project, where I contributed new Java APIs to the
-                Zowe Client Java SDK. This experience helped me become more
-                confident working with professional development workflows,
-                testing, Git, and open-source collaboration.
-            </p>
-        </div>
-    </section>
-
-    <section id="projects" class="reveal">
-        <div class="section-heading">
-            <p>SELECTED WORK</p>
-            <h2>My Projects</h2>
-        </div>
-
-        <div class="projects">
-            <article class="glass-card project-card">
-                <span class="project-number">PROJECT 01</span>
-                <h3>CSC311 Capstone Project</h3>
-
-                <p>
-                    A team software-development project focused on
-                    object-oriented programming, collaboration, and
-                    professional Git practices.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">OOP</span>
-                    <span class="tag">Git</span>
+                    <span>C/C++</span>
                 </div>
 
-                <a class="project-link"
-                   href="https://github.com/AditheD"
-                   target="_blank">
-                    View project <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            </article>
+            </div>
+        </section>
 
-            <article class="glass-card project-card">
-                <span class="project-number">PROJECT 02</span>
-                <h3>Mirror72</h3>
+        <!-- Contact Section -->
+        <section id="contact"
+                 class="reveal">
 
-                <p>
-                    An AI-powered application that forecasts a user's energy,
-                    mood, and focus over a 72-hour period using real-time inputs.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Next.js</span>
-                    <span class="tag">React</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">AI</span>
-                </div>
-
-                <a class="project-link"
-                   href="https://github.com/AditheD"
-                   target="_blank">
-                    View project <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            </article>
-
-            <article class="glass-card project-card">
-                <span class="project-number">PROJECT 03</span>
-                <h3>Zowe Client Java SDK</h3>
-
-                <p>
-                    Open-source contributions completed during my Linux
-                    Foundation mentorship, including Java APIs and automated tests.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">Maven</span>
-                    <span class="tag">REST API</span>
-                    <span class="tag">JUnit</span>
-                </div>
-
-                <a class="project-link"
-                   href="https://github.com/zowe/zowe-client-java-sdk"
-                   target="_blank">
-                    View project <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            </article>
-        </div>
-    </section>
-
-    <section id="services" class="reveal">
-        <div class="section-heading">
-            <p>WHAT I CAN DO</p>
-            <h2>Services</h2>
-        </div>
-
-        <div class="services">
-            <article class="glass-card service-card">
-                <div class="service-icon">
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-
-                <h3>Software Development</h3>
-                <p>
-                    Building organized and maintainable programs using
-                    object-oriented programming principles.
-                </p>
-            </article>
-
-            <article class="glass-card service-card">
-                <div class="service-icon">
-                    <i class="fa-solid fa-globe"></i>
-                </div>
-
-                <h3>Web Development</h3>
-                <p>
-                    Creating responsive websites and web applications with
-                    modern frontend and backend technologies.
-                </p>
-            </article>
-
-            <article class="glass-card service-card">
-                <div class="service-icon">
-                    <i class="fa-solid fa-mobile-screen"></i>
-                </div>
-
-                <h3>Mobile Development</h3>
-                <p>
-                    Developing user-friendly Android applications using
-                    Kotlin and Jetpack Compose.
-                </p>
-            </article>
-        </div>
-    </section>
-
-    <section id="skills" class="reveal">
-        <div class="section-heading">
-            <p>MY TOOLKIT</p>
-            <h2>Skills</h2>
-        </div>
-
-        <div class="skills">
-            <div class="glass-card skill">
-                <i class="fa-brands fa-java"></i>
-                <span>Java</span>
+            <div class="section-heading">
+                <p>LET'S CONNECT</p>
+                <h2>Contact Me</h2>
             </div>
 
-            <div class="glass-card skill">
-                <i class="fa-brands fa-python"></i>
-                <span>Python</span>
-            </div>
-
-            <div class="glass-card skill">
-                <i class="fa-brands fa-android"></i>
-                <span>Kotlin</span>
-            </div>
-
-            <div class="glass-card skill">
-                <i class="fa-brands fa-js"></i>
-                <span>JavaScript</span>
-            </div>
-
-            <div class="glass-card skill">
-                <i class="fa-brands fa-react"></i>
-                <span>React</span>
-            </div>
-
-            <div class="glass-card skill">
-                <i class="fa-solid fa-database"></i>
-                <span>SQL</span>
-            </div>
-
-            <div class="glass-card skill">
-                <i class="fa-brands fa-git-alt"></i>
-                <span>Git</span>
-            </div>
-
-            <div class="glass-card skill">
-                <i class="fa-brands fa-html5"></i>
-                <span>HTML</span>
-            </div>
-
-            <div class="glass-card skill">
-                <i class="fa-brands fa-css3-alt"></i>
-                <span>CSS</span>
-            </div>
-
-            <div class="glass-card skill">
-                <i class="fa-solid fa-code"></i>
-                <span>C/C++</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="reveal">
-        <div class="section-heading">
-            <p>LET'S CONNECT</p>
-            <h2>Contact Me</h2>
-        </div>
-
-        <div class="contact-container">
             <div class="glass-card contact-info">
-                <h3>Let's work together</h3>
+                <h3>Connect with me</h3>
 
                 <p>
                     I am open to internships, entry-level opportunities,
-                    collaborations, and conversations about technology.
+                    open-source collaboration, and conversations about
+                    technology.
                 </p>
 
                 <div class="social-links">
                     <a href="https://github.com/AditheD"
                        target="_blank"
-                       aria-label="GitHub">
+                       rel="noopener noreferrer">
                         <i class="fa-brands fa-github"></i>
+                        GitHub
                     </a>
 
                     <a href="https://www.linkedin.com/in/adithe-d/"
                        target="_blank"
-                       aria-label="LinkedIn">
+                       rel="noopener noreferrer">
                         <i class="fa-brands fa-linkedin-in"></i>
+                        LinkedIn
                     </a>
 
-                    <a href="mailto:adithedas20@gmail.com"
-                       aria-label="Email">
+                    <a href="mailto:adithedas20@gmail.com">
                         <i class="fa-solid fa-envelope"></i>
+                        Email
                     </a>
                 </div>
             </div>
+        </section>
 
-            <form class="glass-card" onsubmit="sendEmail(event)">
-                <input id="name"
-                       type="text"
-                       placeholder="Your name"
-                       required>
+    </main>
 
-                <input id="email"
-                       type="email"
-                       placeholder="Your email"
-                       required>
+    <footer>
+        <p>
+            &copy; 2026 Adithe Das. Designed and built with care.
+        </p>
+    </footer>
 
-                <textarea id="message"
-                          placeholder="Your message"
-                          required></textarea>
+    <script>
+        const revealElements =
+            document.querySelectorAll(".reveal");
 
-                <button class="button primary" type="submit">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    Send Message
-                </button>
-            </form>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2026 Adithe Das. Designed and built with care.</p>
-</footer>
-
-<script>
-    const revealElements = document.querySelectorAll(".reveal");
-
-    const observer = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
+        const observer =
+            new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.12
                 }
-            });
-        },
-        { threshold: 0.12 }
-    );
+            );
 
-    revealElements.forEach(element => observer.observe(element));
-
-    function sendEmail(event) {
-        event.preventDefault();
-
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
-
-        const subject = encodeURIComponent("Portfolio message from " + name);
-        const body = encodeURIComponent(
-            "Name: " + name +
-            "\nEmail: " + email +
-            "\n\nMessage:\n" + message
-        );
-
-        window.location.href =
-            "mailto:adithedas20@gmail.com?subject=" +
-            subject +
-            "&body=" +
-            body;
-    }
-</script>
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
 
 </body>
 </html>
