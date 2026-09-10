@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adithe Das | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f8fc;
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #172554;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        header {
+            min-height: 80vh;
+            background: linear-gradient(135deg, #172554, #2563eb);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            max-width: 650px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: white;
+            color: #1d4ed8;
+            padding: 12px 22px;
+            margin: 5px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #dbeafe;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        section h2 {
+            color: #172554;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            color: #1d4ed8;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        .card a {
+            color: #1d4ed8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .skills {
+            text-align: center;
+        }
+
+        .skill {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #172554;
+            padding: 10px 16px;
+            margin: 6px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact a {
+            color: #1d4ed8;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        footer {
+            background-color: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav div {
+                margin-top: 10px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>Adithe Das</h2>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Hi, I'm Adithe Das</h1>
+        <h2>Computer Science Student and Aspiring Software Engineer</h2>
+
+        <p>
+            I enjoy creating practical applications, learning new technologies,
+            and contributing to projects that solve real-world problems.
+        </p>
+
+        <div>
+            <a class="button" href="#projects">View My Projects</a>
+            <a class="button" href="https://github.com/AditheD" target="_blank">GitHub</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p class="about-text">
+            I am completing my bachelor's degree in Computer Science at
+            Farmingdale State College. I am interested in software development,
+            artificial intelligence, databases, Android development, and systems
+            programming. I also completed a Linux Foundation mentorship where I
+            contributed new APIs to the open-source Zowe Client Java SDK.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>CSC311 Capstone Project</h3>
+                <p>
+                    A team software-development project created for CSC311 using
+                    object-oriented programming and professional Git practices.
+                </p>
+                <a href="https://github.com/AditheD" target="_blank">
+                    View on GitHub
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>Mirror72</h3>
+                <p>
+                    An AI-powered application that forecasts a user's energy,
+                    mood, and focus over a 72-hour period using personal inputs.
+                </p>
+                <a href="https://github.com/AditheD" target="_blank">
+                    View on GitHub
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>Zowe Client Java SDK</h3>
+                <p>
+                    Open-source contributions completed during my Linux Foundation
+                    mentorship, including new Java APIs for working with z/OSMF.
+                </p>
+                <a href="https://github.com/zowe/zowe-client-java-sdk"
+                   target="_blank">
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>What I Can Do</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Software Development</h3>
+                <p>
+                    Create organized applications using Java, Python, C,
+                    Kotlin, and object-oriented programming.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>
+                    Build responsive websites and web applications using
+                    HTML, CSS, JavaScript, React, and Next.js.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Mobile Development</h3>
+                <p>
+                    Develop Android applications using Kotlin and
+                    Jetpack Compose.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Open-Source Contributions</h3>
+                <p>
+                    Contribute code, tests, documentation, and improvements
+                    to collaborative software projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+
+        <div class="skills">
+            <span class="skill">Java</span>
+            <span class="skill">Kotlin</span>
+            <span class="skill">Python</span>
+            <span class="skill">C</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Git & GitHub</span>
+            <span class="skill">Android Development</span>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Let's Connect</h2>
+
+        <p>I am always interested in learning, collaborating, and exploring new opportunities.</p>
+
+        <br>
+
+        <a href="https://github.com/AditheD" target="_blank">GitHub</a>
+
+        <a href="https://www.linkedin.com/in/adithe-d/" target="_blank">LinkedIn</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Adithe Das. Built with HTML and CSS.</p>
+    </footer>
+
+</body>
+</html>
