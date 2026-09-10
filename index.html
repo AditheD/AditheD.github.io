@@ -94,7 +94,8 @@
 
         nav ul {
             display: flex;
-            gap: 28px;
+            align-items: center;
+            gap: 25px;
             list-style: none;
         }
 
@@ -126,7 +127,7 @@
             background: rgba(236, 72, 153, 0.12);
             border: 1px solid rgba(236, 72, 153, 0.3);
             padding: 7px 14px;
-            border-radius: 30px;
+            border-radius:: 30px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 22px;
@@ -134,16 +135,24 @@
 
         .hero h1 {
             font-size: clamp(3rem, 7vw, 5.5rem);
-            line-height: 1.05;
+            line-height:: 1.05;
             margin-bottom: 24px;
         }
 
         .hero-title {
-            color: var(--pink);
             font-weight: 800;
             letter-spacing: -3px;
+            background: linear-gradient(
+                90deg,
+                #ec4899 0%,
+                #d946ef 48%,
+                #a855f7 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             text-shadow:
-                0 8px 30px rgba(236, 72, 153, 0.3);
+                0 8px 35px rgba(217, 70, 239, 0.18);
         }
 
         .hero p {
@@ -179,12 +188,11 @@
         }
 
         .primary {
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--bright-pink),
-                    var(--purple)
-                );
+            background: linear-gradient(
+                90deg,
+                var(--bright-pink),
+                var(--purple)
+            );
             box-shadow:
                 0 10px 30px rgba(236, 72, 153, 0.25);
         }
@@ -210,12 +218,11 @@
             width: 330px;
             height: 330px;
             border-radius: 50%;
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--bright-pink),
-                    var(--purple)
-                );
+            background: linear-gradient(
+                135deg,
+                var(--bright-pink),
+                var(--purple)
+            );
             filter: blur(35px);
             opacity: 0.45;
             animation: pulse 4s infinite alternate;
@@ -242,13 +249,19 @@
         }
 
         .section-heading p {
-            color: #f9a8d4;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .section-heading h2 {
-            font-size: clamp(2rem, 5vw, 3rem);
+            display: inline-block;
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-transform: capitalize;
+            background: linear-gradient(
+                90deg,
+                var(--bright-pink),
+                var(--purple)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .glass-card {
@@ -337,12 +350,11 @@
             display: grid;
             place-items: center;
             border-radius: 13px;
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--bright-pink),
-                    var(--purple)
-                );
+            background: linear-gradient(
+                135deg,
+                var(--bright-pink),
+                var(--purple)
+            );
             font-size: 1.3rem;
             margin-bottom: 18px;
         }
@@ -368,11 +380,6 @@
         .contact-info {
             max-width: 750px;
             padding: 35px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
         }
 
         .contact-info p {
@@ -498,17 +505,32 @@
 
 <body>
 
+    <!-- Navigation -->
     <nav>
         <div class="logo">
             Adithe<span>.</span>
         </div>
 
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#services">What I Can Do</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#contact">Let's Connect</a>
+            </li>
         </ul>
     </nav>
 
@@ -563,8 +585,7 @@
                  class="reveal">
 
             <div class="section-heading">
-                <p>GET TO KNOW ME</p>
-                <h2>About Me</h2>
+                <p>About Me</p>
             </div>
 
             <div class="glass-card about-card">
@@ -592,8 +613,7 @@
                  class="reveal">
 
             <div class="section-heading">
-                <p>SELECTED WORK</p>
-                <h2>My Projects</h2>
+                <p>Projects I Worked On</p>
             </div>
 
             <div class="projects">
@@ -689,13 +709,12 @@
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- What I Can Do Section -->
         <section id="services"
                  class="reveal">
 
             <div class="section-heading">
-                <p>WHAT I CAN DO</p>
-                <h2>Services</h2>
+                <p>What I Can Do</p>
             </div>
 
             <div class="services">
@@ -747,8 +766,7 @@
                  class="reveal">
 
             <div class="section-heading">
-                <p>MY TOOLKIT</p>
-                <h2>Skills</h2>
+                <p>My Toolkit &amp; Skills</p>
             </div>
 
             <div class="skills">
@@ -811,13 +829,10 @@
                  class="reveal">
 
             <div class="section-heading">
-                <p>LET'S CONNECT</p>
-                <h2>Contact Me</h2>
+                <p>Let's Connect</p>
             </div>
 
             <div class="glass-card contact-info">
-                <h3>Connect with me</h3>
-
                 <p>
                     I am open to internships, entry-level opportunities,
                     open-source collaboration, and conversations about
@@ -825,6 +840,7 @@
                 </p>
 
                 <div class="social-links">
+
                     <a href="https://github.com/AditheD"
                        target="_blank"
                        rel="noopener noreferrer">
@@ -843,6 +859,7 @@
                         <i class="fa-solid fa-envelope"></i>
                         Email
                     </a>
+
                 </div>
             </div>
         </section>
