@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
 
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+          content="width=device-width,-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Portfolio of Adithe Das, Computer Science student and aspiring software engineer.">
+          content="Portfolio of of Adithe Das, Computer Science student and aspiring software engineer.">
 
     <title>Adithe Das | Portfolio</title>
 
@@ -87,33 +87,31 @@
             left: 0;
             z-index: 100;
             width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 14px 4%;
+            padding: 14px 2%;
             background: rgba(5, 5, 5, 0.9);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(15px);
         }
 
         nav ul {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            flex-wrap: wrap;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
             gap: 8px;
             list-style: none;
         }
 
         nav a {
-            display: inline-block;
-            padding: 7px 11px;
+            display: block;
+            width: 100%;
+            padding: 9px 5px;
             color: var(--light-pink);
             background: rgba(236, 72, 153, 0.08);
             border: 1px solid transparent;
             border-radius: 20px;
+            text-align: center;
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 600;
             white-space: nowrap;
             transition: 0.3s;
@@ -175,16 +173,8 @@
             background: #111;
         }
 
-        .welcome {
-            font-size: clamp(1.8rem, 4vw, 2.7rem);
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
-
+        .welcome,
         .name {
-            margin-bottom: 10px;
-            font-size: clamp(2.2rem, 5vw, 3.7rem);
-            font-weight: 800;
             background: linear-gradient(
                 90deg,
                 var(--pink),
@@ -194,6 +184,18 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+
+        .welcome {
+            margin-bottom: 4px;
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            font-weight: 800;
+        }
+
+        .name {
+            margin-bottom: 10px;
+            font-size: clamp(2.2rem, 5vw, 3.7rem);
+            font-weight: 800;
         }
 
         .role {
@@ -437,7 +439,7 @@
         .position {
             color: var(--light-pink);
             font-weight: 700;
-            margin-bottom: 2px;
+            margin-bottom: 12px;
         }
 
         .date {
@@ -577,19 +579,18 @@
 
         @media (max-width: 850px) {
             nav {
-                padding: 12px;
+                padding: 10px;
                 overflow-x: auto;
             }
 
             nav ul {
                 width: max-content;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
+                display: flex;
+                gap: 8px;
             }
 
             nav a {
-                font-size: 0.78rem;
-                padding: 7px 10px;
+                min-width: 95px;
             }
 
             .card-grid {
@@ -636,7 +637,6 @@
 
     <canvas id="particle-canvas"></canvas>
 
-    <!-- Easy-access navigation buttons -->
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -904,8 +904,6 @@
                         Front Desk Receptionist
                     </p>
 
-                    <p class="date">Current Position</p>
-
                     <p class="description">
                         Assist guests with check-ins, check-outs,
                         reservations, questions, and customer-service
@@ -924,8 +922,6 @@
                     </div>
 
                     <p class="position">Pharmacy Technician</p>
-
-                    <p class="date">Previous Experience</p>
 
                     <p class="description">
                         Assisted with processing prescriptions, insurance
@@ -948,8 +944,6 @@
                         Quality Assurance Floor Inspector
                     </p>
 
-                    <p class="date">Previous Experience</p>
-
                     <p class="description">
                         Inspected manufacturing processes and products,
                         identified defects, documented findings, and
@@ -965,8 +959,6 @@
                     </div>
 
                     <p class="position">Shift Manager</p>
-
-                    <p class="date">Previous Experience</p>
 
                     <p class="description">
                         Supervised employees, supported daily restaurant
